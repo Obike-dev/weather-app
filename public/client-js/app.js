@@ -26,3 +26,4 @@ form.addEventListener('submit', (e) => {
     }
   );
 });
+
