@@ -1,5 +1,3 @@
-console.log('fucking client side js');
-
 const form = document.querySelector('form');
 const userInput = document.querySelector('input');
 
