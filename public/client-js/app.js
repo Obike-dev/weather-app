@@ -11,19 +11,16 @@ form.addEventListener('submit', (e) => {
   firstParagraph.textContent = 'Loading...';
   secondParagraph.textContent = '';
 
-  fetch(`http://localhost:3000/weather?address=${userInputValue}`).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          firstParagraph.textContent = data.error;
-        } else if (userInputValue === '') {
-          firstParagraph.textContent = 'please enter a location';
-        } else {
-          firstParagraph.textContent = data.location;
-          secondParagraph.textContent = data.forecastData;
-        }
-      });
-    }
-  );
+  fetch(`/weather?address=${userInputValue}`).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        firstParagraph.textContent = data.error;
+      } else if (userInputValue === '') {
+        firstParagraph.textContent = 'please enter a location';
+      } else {
+        firstParagraph.textContent = data.location;
+        secondParagraph.textContent = data.forecastData;
+      }
+    });
+  });
 });
-
